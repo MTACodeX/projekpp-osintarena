@@ -239,7 +239,7 @@ Default login:
 
 ```txt
 Username : admin
-Password : admin12345
+Password : mantaganteng
 ```
 
 Jika password sudah diganti di `AdminSeeder.php`, gunakan password yang terbaru.
@@ -253,7 +253,7 @@ nano database/seeders/AdminSeeder.php
 Cari:
 
 ```php
-'password' => Hash::make('admin12345'),
+'password' => Hash::make('mantaganteng'),
 ```
 
 Ganti menjadi:
