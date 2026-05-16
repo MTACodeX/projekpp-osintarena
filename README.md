@@ -884,7 +884,7 @@ Login admin:
 
 ```txt
 Username : admin
-Password : admin12345
+Password : mantaganteng
 ```
 
 Jika password admin sudah diubah, cek di:
