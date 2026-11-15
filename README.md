@@ -1,915 +1,215 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
 # OSINT Arena
 
-OSINT Arena adalah platform CTF lokal khusus OSINT yang dibuat menggunakan Laravel.  
-Platform ini bisa dijalankan di localhost, jaringan lokal, atau dikembangkan bersama melalui GitHub.
+**OSINT Arena** adalah platform *Capture The Flag* (CTF) berbasis web yang berfokus pada tantangan *Open-Source Intelligence* (OSINT). Platform ini dirancang untuk latihan, pembelajaran, dan penyelenggaraan kompetisi skala kecil, dengan alur peserta, pengelolaan tantangan, penilaian, dan papan peringkat dalam satu aplikasi.
 
-Project ini cocok untuk latihan, demo kelas, simulasi lomba kecil, dan pembelajaran OSINT CTF.
+Dibangun dengan Laravel dan Blade, OSINT Arena dapat dijalankan secara lokal maupun di jaringan internal untuk kebutuhan pengembangan dan simulasi acara.
 
----
+## Fitur
 
-## Fitur Utama
+### Peserta
 
-- Landing page
-- Register dan login
-- Login menggunakan username
-- 1 user = 1 team
-- Nama team bisa dibuat sendiri atau random
-- Challenge khusus OSINT
-- Upload file soal dari admin
-- Preview gambar langsung di detail challenge
-- Submit flag
-- Popup benar/salah saat submit flag
-- Dynamic scoring
-- Scoreboard dengan podium rank 1 sampai 3
-- Rank 4 dan seterusnya tampil di tabel
-- Scoreboard auto update
-- Admin panel
-- Bisa diakses lewat localhost atau jaringan lokal
+- Registrasi dan login menggunakan username.
+- Satu akun mewakili satu tim, dengan nama tim yang dapat dipilih sendiri atau dibuat secara acak.
+- Daftar tantangan OSINT beserta halaman detailnya.
+- Pratinjau gambar dan akses berkas pendukung tantangan.
+- Pengiriman flag dengan informasi hasil: benar, salah, atau sudah diselesaikan.
+- Scoreboard dengan podium tiga besar dan daftar peringkat berikutnya yang diperbarui secara berkala.
 
----
+### Administrator
 
-## Teknologi yang Digunakan
+- Dashboard dan pengelolaan tantangan (tambah, edit, hapus).
+- Unggah berkas pendukung tantangan serta penentuan flag.
+- Pengaturan *maximum points*, *minimum points*, dan *decay per solve*.
+- Pemantauan akun peserta serta riwayat submission.
 
-- PHP
-- Laravel
-- Blade Template
-- SQLite
-- CSS custom
-- JavaScript
-- Git dan GitHub
+## Teknologi
 
----
+| Komponen | Teknologi |
+| --- | --- |
+| Backend | PHP, Laravel |
+| Antarmuka | Blade, CSS, JavaScript |
+| Database | SQLite |
+| Dependency & build | Composer, npm |
+| Version control | Git, GitHub |
 
-## Requirement
+## Menjalankan secara lokal
 
-Pastikan perangkat sudah memiliki:
+### Prasyarat
 
-```bash
-php
-composer
-nodejs
-npm
-git
-sqlite
+Pastikan PHP dengan ekstensi SQLite, Composer, Node.js, npm, dan Git sudah tersedia. Versi yang dibutuhkan mengikuti berkas `composer.json` dan `package.json` dalam repository.
+
+### Instalasi
+
+1. Clone repository dan masuk ke folder project:
+
+   ```bash
+   git clone https://github.com/MTACodeX/projekpp-osintarena.git
+   cd projekpp-osintarena
+   ```
+
+2. Pasang dependency:
+
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. Buat konfigurasi environment dan application key:
+
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. Sesuaikan konfigurasi di `.env`, terutama koneksi database:
+
+   ```dotenv
+   APP_NAME="OSINT Arena"
+   APP_ENV=local
+   APP_DEBUG=true
+   APP_URL=http://localhost:8000
+
+   DB_CONNECTION=sqlite
+   ```
+
+   `APP_KEY` diisi otomatis oleh perintah `php artisan key:generate`; jangan menimpanya dengan nilai kosong.
+
+5. Siapkan database dan data awal:
+
+   ```bash
+   touch database/database.sqlite
+   php artisan migrate --seed
+   ```
+
+   > **Perhatian:** `php artisan migrate:fresh --seed` akan menghapus seluruh tabel dan membuatnya kembali. Gunakan hanya jika memang ingin mereset database pengembangan.
+
+6. Hubungkan penyimpanan file publik dan siapkan aset frontend:
+
+   ```bash
+   php artisan storage:link
+   npm run build
+   ```
+
+7. Jalankan server:
+
+   ```bash
+   php artisan serve --host=127.0.0.1 --port=8000
+   ```
+
+   Buka **http://localhost:8000** di browser.
+
+### Akun administrator
+
+Akun admin awal disiapkan melalui `database/seeders/AdminSeeder.php` saat proses seeding. Periksa konfigurasi seeder untuk kredensial pengembangan, kemudian **ganti password bawaan sebelum aplikasi dibagikan atau diakses melalui jaringan**.
+
+> Project ini ditujukan untuk pengembangan dan simulasi. Jangan gunakan kredensial bawaan, `APP_DEBUG=true`, atau Laravel development server sebagai konfigurasi deployment publik.
+
+## Menggunakan aplikasi
+
+1. Peserta membuat akun atau login, lalu memilih tantangan di halaman **Challenges**.
+2. Peserta memeriksa deskripsi dan berkas pendukung untuk menemukan flag.
+3. Flag dikirim lewat halaman detail tantangan. Aplikasi memberikan umpan balik atas submission.
+4. Poin dari penyelesaian yang valid ditambahkan ke skor tim dan ditampilkan di **Scoreboard**.
+5. Administrator mengelola tantangan, parameter poin, peserta, dan riwayat submission melalui panel admin.
+
+### Halaman utama
+
+| Akses | Path |
+| --- | --- |
+| Beranda | `/` |
+| Login / Register | `/login`, `/register` |
+| Aturan | `/rules` |
+| Dashboard peserta | `/dashboard` |
+| Profil | `/profile` |
+| Daftar dan detail tantangan | `/challenges`, `/challenges/{slug}` |
+| Scoreboard | `/scoreboard` |
+| Panel admin | `/admin` |
+| Kelola tantangan | `/admin/challenges` |
+| Peserta dan submission | `/admin/users`, `/admin/submissions` |
+
+Sebagian halaman memerlukan autentikasi atau hak akses administrator.
+
+## Sistem penilaian
+
+OSINT Arena menggunakan **dynamic scoring**: poin suatu tantangan berkurang ketika semakin banyak peserta menyelesaikannya, tetapi tidak turun di bawah batas minimum.
+
+```text
+points_awarded = max(min_points, max_points - (previous_solves * decay_per_solve))
 ```
 
-Untuk pengguna Arch Linux / WSL:
+Sebagai contoh, jika sebuah tantangan memiliki `max_points = 500`, `min_points = 100`, dan `decay_per_solve = 50`, maka empat penyelesaian pertama masing-masing memperoleh **500, 450, 400, dan 350 poin**. Skor yang sudah diperoleh peserta sebelumnya tidak dihitung ulang.
 
-```bash
-sudo pacman -Syu
-sudo pacman -S php php-sqlite composer nodejs npm git unzip
-```
+Format flag menggunakan tanda kurung kurawal, misalnya `{contoh_jawaban}`. Tidak diperlukan prefix khusus seperti `OSINTCTF`.
 
-Cek versi:
+## Berkas tantangan
 
-```bash
-php -v
-composer -V
-node -v
-npm -v
-git --version
-```
+Administrator dapat mengunggah gambar (`jpg`, `jpeg`, `png`, `webp`, `gif`) untuk ditampilkan langsung pada detail tantangan. Berkas lain, seperti `pdf`, `zip`, atau `txt`, dapat disediakan sebagai lampiran untuk dibuka atau diunduh.
 
----
+Penyimpanan publik menggunakan direktori `storage/app/public/challenges` dan URL `/storage/challenges/...` setelah `php artisan storage:link` dijalankan.
 
-## Clone Project
+## Akses melalui jaringan lokal (opsional)
 
-Clone repository:
-
-```bash
-git clone https://github.com/USERNAME/projekpp-osintarena.git
-cd projekpp-osintarena
-```
-
-Ganti `USERNAME` dengan username GitHub pemilik repository.
-
-Contoh:
-
-```bash
-git clone https://github.com/MTACodeX/projekpp-osintarena.git
-cd projekpp-osintarena
-```
-
----
-
-## Install Dependency
-
-Install dependency Laravel:
-
-```bash
-composer install
-```
-
-Install dependency frontend:
-
-```bash
-npm install
-```
-
----
-
-## Setup Environment
-
-Copy file `.env.example` menjadi `.env`:
-
-```bash
-cp .env.example .env
-```
-
-Generate application key:
-
-```bash
-php artisan key:generate
-```
-
-Buka file `.env`:
-
-```bash
-nano .env
-```
-
-Pastikan konfigurasi penting seperti ini:
-
-```env
-APP_NAME="OSINT Arena"
-APP_ENV=local
-APP_KEY=
-APP_DEBUG=true
-APP_URL=http://localhost:8000
-APP_TIMEZONE=Asia/Jakarta
-
-DB_CONNECTION=sqlite
-```
-
-Setelah menjalankan `php artisan key:generate`, bagian `APP_KEY` akan terisi otomatis.
-
----
-
-## Setup Database SQLite
-
-Buat file database SQLite:
-
-```bash
-touch database/database.sqlite
-```
-
-Jalankan migration dan seeder:
-
-```bash
-php artisan migrate:fresh --seed
-```
-
-Perintah ini akan:
-
-1. Membuat ulang semua tabel database
-2. Menjalankan semua migration
-3. Mengisi data awal dari seeder
-4. Membuat akun admin default
-
----
-
-## Akun Admin Default
-
-Akun admin dibuat dari file:
-
-```txt
-database/seeders/AdminSeeder.php
-```
-
-Default login:
-
-```txt
-Username : admin
-Password : mantaganteng
-```
-
-Jika password sudah diganti di `AdminSeeder.php`, gunakan password yang terbaru.
-
-Untuk mengganti password admin default, buka:
-
-```bash
-nano database/seeders/AdminSeeder.php
-```
-
-Cari:
-
-```php
-'password' => Hash::make('mantaganteng'),
-```
-
-Ganti menjadi:
-
-```php
-'password' => Hash::make('passwordbaru'),
-```
-
-Lalu reset database:
-
-```bash
-php artisan migrate:fresh --seed
-```
-
----
-
-## Setup Storage untuk Upload File
-
-Agar file upload challenge bisa dibuka dari browser, jalankan:
-
-```bash
-php artisan storage:link
-```
-
-Jika file upload atau gambar tidak muncul, jalankan ulang:
-
-```bash
-rm -rf public/storage
-php artisan storage:link
-php artisan optimize:clear
-```
-
-File challenge akan disimpan di:
-
-```txt
-storage/app/public/challenges
-```
-
-Dan bisa diakses dari browser melalui:
-
-```txt
-/storage/challenges/nama-file
-```
-
----
-
-## Setup CSS
-
-Project ini dapat memakai CSS langsung dari folder `public/css`.
-
-Jalankan:
-
-```bash
-mkdir -p public/css
-cp resources/css/app.css public/css/app.css
-```
-
-Jika memakai Vite, jalankan:
-
-```bash
-npm run build
-```
-
-Untuk development mode:
-
-```bash
-npm run dev
-```
-
-Namun untuk akses lewat jaringan lokal atau HP, disarankan memakai CSS public biasa atau hasil build:
-
-```bash
-npm run build
-```
-
----
-
-## Jalankan Project
-
-Untuk menjalankan di localhost:
-
-```bash
-php artisan serve
-```
-
-Buka di browser:
-
-```txt
-http://localhost:8000
-```
-
-Atau:
-
-```txt
-http://127.0.0.1:8000
-```
-
----
-
-## Jalankan agar Bisa Diakses Lewat Jaringan Lokal
-
-Jalankan Laravel dengan host `0.0.0.0`:
+Untuk pengujian dari perangkat lain pada Wi-Fi yang sama, jalankan server dengan alamat bind seluruh interface:
 
 ```bash
 php artisan serve --host=0.0.0.0 --port=8000
 ```
 
-Cari IP laptop:
+Kemudian buka `http://IP-KOMPUTER:8000` dari perangkat lain. Pastikan firewall mengizinkan koneksi pada port tersebut.
 
-### Windows CMD
+Pada **WSL2**, IP internal WSL umumnya tidak dapat diakses langsung dari HP. Tergantung konfigurasi jaringan WSL, akses dapat membutuhkan *port forwarding* dari Windows ke IP WSL serta aturan Windows Firewall. Alamat IP dan port harus disesuaikan dengan perangkat masing-masing; contoh konfigurasi lokal tidak dijadikan pengaturan permanen dalam repository.
 
-```cmd
-ipconfig
-```
+> Gunakan hanya di jaringan tepercaya. Untuk deployment yang dapat diakses publik, gunakan web server dan konfigurasi production yang sesuai.
 
-Gunakan IP dari adapter Wi-Fi.
+## Troubleshooting
 
-Contoh:
-
-```txt
-192.168.1.6
-```
-
-Lalu akses dari HP atau laptop lain yang satu jaringan:
-
-```txt
-http://192.168.1.6:8000
-```
-
----
-
-## Akses Lokal dari WSL
-
-Jika project dijalankan dari WSL dan ingin diakses oleh HP/teman satu WiFi, kadang perlu port forwarding dari Windows ke WSL.
-
-Cek IP WSL:
-
-```bash
-ip addr
-```
-
-Contoh IP WSL:
-
-```txt
-172.31.106.142
-```
-
-Cek IP Windows:
-
-```cmd
-ipconfig
-```
-
-Contoh IP Wi-Fi Windows:
-
-```txt
-192.168.1.6
-```
-
-Buka CMD atau PowerShell sebagai Administrator, lalu jalankan:
-
-```cmd
-netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8000 connectaddress=IP_WSL connectport=8000
-```
-
-Contoh:
-
-```cmd
-netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8000 connectaddress=172.31.106.142 connectport=8000
-```
-
-Tambahkan rule firewall:
-
-```cmd
-netsh advfirewall firewall add rule name="Laravel OSINT Arena 8000" dir=in action=allow protocol=TCP localport=8000
-```
-
-Akses dari HP:
-
-```txt
-http://192.168.1.6:8000
-```
-
----
-
-## Struktur Halaman
-
-Halaman umum:
-
-```txt
-/
-/login
-/register
-/rules
-```
-
-Halaman user:
-
-```txt
-/dashboard
-/profile
-/challenges
-/challenges/{slug}
-/scoreboard
-```
-
-Halaman admin:
-
-```txt
-/admin
-/admin/challenges
-/admin/challenges/create
-/admin/challenges/{id}/edit
-/admin/users
-/admin/submissions
-```
-
----
-
-## Cara Menggunakan Admin Panel
-
-Login sebagai admin, lalu buka:
-
-```txt
-/admin
-```
-
-Admin dapat:
-
-- Membuat challenge OSINT
-- Mengedit challenge
-- Menghapus challenge
-- Upload file soal
-- Mengatur max points
-- Mengatur min points
-- Mengatur decay per solve
-- Mengisi flag
-- Melihat daftar user
-- Melihat submission benar dan salah
-
----
-
-## Format Flag
-
-Format flag yang digunakan:
-
-```txt
-{jawaban}
-```
-
-Contoh:
-
-```txt
-{pelabuhan_merak}
-{jakarta_selatan}
-{hidden_location}
-```
-
-Flag tidak wajib memakai prefix seperti:
-
-```txt
-OSINTCTF{...}
-```
-
----
-
-## Dynamic Scoring
-
-Sistem scoring menggunakan dynamic scoring.
-
-Setiap challenge memiliki:
-
-```txt
-Max Points
-Min Points
-Decay Per Solve
-```
-
-Contoh:
-
-```txt
-Max Points      : 500
-Min Points      : 100
-Decay Per Solve : 50
-```
-
-Maka poin yang didapat peserta:
-
-```txt
-Solver pertama  : 500
-Solver kedua    : 450
-Solver ketiga   : 400
-Solver keempat  : 350
-```
-
-Jika poin sudah turun sampai `Min Points`, maka poin tidak akan turun lagi.
-
-Rumus:
-
-```txt
-points_awarded = max(min_points, max_points - (jumlah_solve_sebelumnya * decay_per_solve))
-```
-
-Poin yang sudah didapat peserta sebelumnya tidak ikut turun.
-
----
-
-## Scoreboard
-
-Scoreboard menampilkan:
-
-- Rank
-- Team Name
-- Score
-- Solves
-- Last Solve
-
-Rank 1 sampai 3 tampil sebagai podium.
-
-Rank 4 dan seterusnya tampil dalam tabel.
-
-Scoreboard mengambil data dari route:
-
-```txt
-/scoreboard/data
-```
-
-Interval auto update bisa diubah di file:
-
-```txt
-resources/views/scoreboard/index.blade.php
-```
-
-Cari:
-
-```js
-setInterval(loadScoreboard, 50000);
-```
-
-Keterangan:
-
-```txt
-3000  = 3 detik
-5000  = 5 detik
-50000 = 50 detik
-```
-
----
-
-## Preview Gambar Challenge
-
-Jika admin mengupload file gambar seperti:
-
-```txt
-jpg
-jpeg
-png
-webp
-gif
-```
-
-Maka gambar akan langsung tampil di halaman detail challenge.
-
-Jika file bukan gambar seperti:
-
-```txt
-zip
-pdf
-txt
-docx
-pcap
-```
-
-Maka user dapat membuka atau mengunduh file melalui tombol `Open / Download`.
-
----
-
-## Popup Submit Flag
-
-Saat user submit flag:
-
-```txt
-Flag benar  -> muncul popup Flag Benar
-Flag salah  -> muncul popup Flag Salah
-Sudah solve -> muncul popup Sudah Solved
-```
-
-Popup tidak menggunakan sound.
-
----
-
-## Perintah Penting
-
-Reset database dan isi ulang seeder:
-
-```bash
-php artisan migrate:fresh --seed
-```
-
-Reset database tanpa seeder:
-
-```bash
-php artisan migrate:fresh
-```
-
-Membersihkan cache Laravel:
-
-```bash
-php artisan optimize:clear
-php artisan view:clear
-php artisan config:clear
-php artisan route:clear
-```
-
-Membuat cache agar lebih cepat:
-
-```bash
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
-composer dump-autoload -o
-```
-
-Menjalankan server lokal:
-
-```bash
-php artisan serve
-```
-
-Menjalankan server untuk jaringan lokal:
-
-```bash
-php artisan serve --host=0.0.0.0 --port=8000
-```
-
----
-
-## Jika CSS Tidak Muncul
-
-Jalankan:
-
-```bash
-mkdir -p public/css
-cp resources/css/app.css public/css/app.css
-php artisan optimize:clear
-php artisan view:clear
-```
-
-Refresh browser dengan:
-
-```txt
-CTRL + F5
-```
-
-Pastikan layout memakai:
-
-```blade
-<link rel="stylesheet" href="{{ asset('css/app.css') }}?v=1.0.0">
-```
-
-Jika memakai Vite, pastikan file ini ada:
-
-```txt
-public/build/manifest.json
-```
-
-Jika belum ada, jalankan:
+**Style/CSS tidak tampil**
 
 ```bash
 npm run build
+php artisan optimize:clear
 ```
 
----
+Jika project menggunakan stylesheet langsung dari `public/css/app.css`, pastikan berkas tersebut tersedia dan dirujuk dengan benar pada layout Blade. Jika memakai Vite, pastikan hasil build tersimpan di `public/build`.
 
-## Jika Upload Gambar Tidak Muncul
-
-Jalankan:
+**Gambar atau lampiran tantangan tidak tampil**
 
 ```bash
-rm -rf public/storage
 php artisan storage:link
 php artisan optimize:clear
-php artisan view:clear
 ```
 
-Cek file upload:
+Pastikan berkas benar-benar ada di `storage/app/public/challenges` dan memiliki izin baca yang sesuai. Jangan menghapus folder penyimpanan sebelum memeriksa isinya.
+
+**Perubahan konfigurasi belum diterapkan**
 
 ```bash
-ls storage/app/public/challenges
+php artisan optimize:clear
 ```
 
-Coba buka langsung dari browser:
+**Kinerja WSL lambat**
 
-```txt
-http://localhost:8000/storage/challenges/NAMA_FILE
-```
+Untuk pengembangan di WSL, simpan repository di filesystem Linux (misalnya `~/projects/projekpp-osintarena`), bukan di `/mnt/c/...`, bila operasi file terasa lambat.
 
-Jika masih 404, upload ulang file challenge dari admin panel.
+## Pengembangan dan kontribusi
 
----
-
-## Jika Website Lambat di WSL
-
-Jangan jalankan project dari folder Windows seperti:
-
-```txt
-/mnt/c/...
-```
-
-Pindahkan ke filesystem WSL:
-
-```bash
-mkdir -p ~/projects
-cp -a "/mnt/c/Users/HYPE AMD/Documents/projekpp-osintarena" ~/projects/
-cd ~/projects/projekpp-osintarena
-```
-
-Project Laravel akan lebih cepat jika berada di:
-
-```txt
-/home/username/projects/projekpp-osintarena
-```
-
----
-
-## Workflow Git untuk Kerja Bareng
-
-Sebelum mulai edit:
+Untuk pekerjaan bersama, buat branch terpisah, lakukan perubahan, lalu ajukan Pull Request:
 
 ```bash
 git pull origin main
-```
-
-Buat branch baru:
-
-```bash
 git checkout -b nama-fitur
-```
-
-Contoh:
-
-```bash
-git checkout -b update-scoreboard
-```
-
-Setelah selesai edit:
-
-```bash
+# Lakukan perubahan dan pengujian
 git add .
-git commit -m "Update scoreboard layout"
-git push origin nama-fitur
+git commit -m "Add feature description"
+git push -u origin nama-fitur
 ```
 
-Lalu buat Pull Request di GitHub.
+Sebelum push, pastikan file `.env`, database lokal, hasil unggahan privat, folder `vendor`, dan `node_modules` tidak ikut ter-commit. Periksa aturan `.gitignore` dan jalankan `git status`.
 
-Jika langsung kerja di branch main:
+## Status pengembangan
 
-```bash
-git pull origin main
-git add .
-git commit -m "Update fitur"
-git push origin main
-```
+OSINT Arena masih berada pada tahap **MVP** dan terbuka untuk pengembangan lebih lanjut. Beberapa ide pengembangan berikutnya meliputi sistem hint, pengaturan durasi event, ekspor scoreboard, pengelolaan banyak event, dan pembaruan peringkat secara real-time.
 
 ---
 
-## File yang Tidak Boleh Di-commit
-
-Jangan commit file atau folder ini:
-
-```txt
-.env
-vendor/
-node_modules/
-database/database.sqlite
-storage/app/public/challenges/
-public/storage
-```
-
-Pastikan `.gitignore` berisi:
-
-```gitignore
-/vendor
-/node_modules
-.env
-/database/database.sqlite
-/storage/app/public/challenges/*
-/public/storage
-/public/hot
-/public/build
-```
-
----
-
-## Setup Cepat dari Nol
-
-Untuk teman yang baru clone project, jalankan:
-
-```bash
-git clone https://github.com/USERNAME/projekpp-osintarena.git
-cd projekpp-osintarena
-
-composer install
-npm install
-
-cp .env.example .env
-php artisan key:generate
-
-touch database/database.sqlite
-php artisan migrate:fresh --seed
-
-php artisan storage:link
-
-mkdir -p public/css
-cp resources/css/app.css public/css/app.css
-
-php artisan optimize:clear
-php artisan serve
-```
-
-Buka:
-
-```txt
-http://localhost:8000
-```
-
-Login admin:
-
-```txt
-Username : admin
-Password : mantaganteng
-```
-
-Jika password admin sudah diubah, cek di:
-
-```txt
-database/seeders/AdminSeeder.php
-```
-
----
-
-## Catatan
-
-Project ini masih MVP dan bisa dikembangkan lagi.
-
-Fitur yang bisa ditambahkan ke depannya:
-
-- Export scoreboard
-- Import challenge
-- Hint system
-- Timer event
-- Pengaturan event dari admin
-- Reset scoreboard dari admin
-- Theme mode
-- WebSocket realtime
-- Multi event
-- Role panitia
-- Anti brute force submit flag
-
+**Repository:** [MTACodeX/projekpp-osintarena](https://github.com/MTACodeX/projekpp-osintarena)
